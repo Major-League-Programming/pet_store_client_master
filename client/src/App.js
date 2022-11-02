@@ -1,9 +1,16 @@
 import './App.css';
-import RegisterPage from "./RegisterPage";
+import { Routes, Route } from "react-router-dom";
+import SignInSide from './authentication/login'
+import RAppBar from "./appbar/appBar";
 
 function App() {
   return (
-    <RegisterPage/>
+      <Routes>
+        <Route path="/" element={<RAppBar/>}>
+          <Route index element={<p>Home</p>} />
+          <Route path="login" element={<SignInSide />} />
+        </Route>
+      </Routes>
   );
 }
 
