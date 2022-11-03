@@ -1,33 +1,37 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { blue } from '@mui/material/colors';
+import {CardContent, OutlinedInput} from "@mui/material";
 import {createTheme, ThemeProvider} from '@mui/material/styles';
+import {Card} from "reactstrap";
 
-import background from "../assets/images/register.png";
-import logo from "../assets/images/logo.png";
-import {Modal} from "reactstrap";
+//Icons
+import ShortcutIcon from '@mui/icons-material/Shortcut';
+import AppleIcon from '@mui/icons-material/Apple';
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import FooterLogin from "./FooterLogin";
+
 
 const theme = createTheme({
+    overrides: {
+        "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "white",
+            },
+        }},
+    overflow: 'hidden',
     typography: {
         fontFamily: [
-           'Righteous'
-        ].join(','),
-    },
-    palette: {
-        primary: {
-            main: blue[50],
-        },
-    },
+            'Righteous'
+        ].join(',')
+    }
 });
 
-export default function SignUpSide() {
+
+export default  function SignUpSide() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -39,144 +43,212 @@ export default function SignUpSide() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Grid container component="main" sx={{height: '100vh', backgroundColor: '#282a37'}}>
-                <Grid sx={{backgroundColor: '#282a37', boxShadow: 'none', }} item xs={12} sm={8} md={6} component={Paper} square>
-                   <Grid container sx={{alignItems: 'center', justifyContent:'center'}}>
-                    <Box
-                        sx={{
-                            my: 8,
-                            mx: 4,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                        }}
-                    >
-                        <Avatar variant="rounded" src={logo} sx={{width: 220, height:100}}/>
-                        <Grid container sx={{mt: 30}}>
-                            <Typography component="h1" sx={{color: '#EBBD3B', fontSize: '40px'}}>
-                                You&nbsp;
+            <Grid container component="main" sx={{height: '100vh', backgroundColor:'#09040a',  display: "flex", justifyContent: "center", position: 'absolute'}} >
+                <Card>
+                    <CardContent>
+                        <Box
+                            sx={{
+                                mt: 25,
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                            }}
+                        >
+                            <Typography fontSize='60px' fontFamily='Baloo' color='white'>
+                                Create your new account
                             </Typography>
-                            <Typography component="h1" sx={{color: 'white', fontSize: '40px'}}>
-                                care.&nbsp;
+                            <Typography component="h1" variant="h6" fontFamily='Baloo' color='white'>
+                                Choose among 2k products to satisfy your little buddy!
                             </Typography>
-                            <Typography component="h1" sx={{color: '#EBBD3B', fontSize: '40px'}}>
-                                We&nbsp;
+                            <Typography component="h1" variant="h6" fontFamily='Baloo' color='white'>
+                                With freshly new products every second month
                             </Typography>
-                            <Typography component="h1" sx={{color: 'white', fontSize: '40px'}}>
-                                care.
-                            </Typography>
-                        </Grid>
-                        <Grid container>
-
-                            <Typography component="h1" sx={{color: 'white', fontSize: '64px'}}>
-                                Create an account&nbsp;
-                            </Typography>
-                            <Typography component="h1" sx={{color: '#EBBD3B', fontSize: '64px'}}>
-                                .
-                            </Typography>
-                        </Grid>
-                        <Grid item>
-                            <Link style={{textDecoration: 'none'}} to="#" variant="body2" sx={{cursor:'pointer'}}>
-                                {
-                                    <Grid container>
-                                        <Typography component="h1" sx={{color: 'white', fontSize: '15px'}}>
-                                            Don't have an account?&nbsp;&nbsp;
-                                        </Typography>
-                                        <Typography component="h1" sx={{color: '#EBBD3B', fontSize: '15px'}}>
-                                            Sign Up
-                                        </Typography>
-                                    </Grid>
-                                }
-                            </Link>
-                        </Grid>
-                        <Box component="form" noValidate autoComplete="off" onSubmit={handleSubmit} sx={{mt: 1}}>
-                            <Grid container>
-                                <Grid xs={12} sm={6} md={6}>
-                                <TextField
-                                    sx={{backgroundColor:'white', borderRadius: 3}}
-                                    variant="outlined"
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    id="Name"
-                                    label="Name"
-                                    name="full name"
-                                />
-                                </Grid>
-                                <Grid xs={12} sm={6} md={6} sx={{'& .MuiTextField-root': { ml: 3, width: '38ch'}}} >
-                                <TextField
-                                    sx={{backgroundColor:'white', borderRadius: 3}}
-                                    variant="outlined"
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    id="surname"
-                                    label="Surname"
-                                    name="surname"
-                                />
-                                </Grid>
-                            </Grid>
-                            <TextField
-                                sx={{backgroundColor:'white', borderRadius: 3}}
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                id="email"
-                                label="Email Address"
-                                name="email"
-                            />
-                            <TextField
-                                sx={{backgroundColor:'white', borderRadius: 3}}
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                name="password"
-                                label="Password"
-                                type="password"
-                                id="password"
-                            />
-                            <TextField
-                                sx={{borderRadius: 3, borderBlockColor: 'white'}}
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                name="password"
-                                label="Confirm Password"
-                                type="password"
-                                id="password"
-                            />
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                sx={{mt: 3, mb: 2, backgroundColor:'#EBBD3B', height:'60px'}}
+                            <Box
+                                component="form"
+                                noValidate
+                                onSubmit={handleSubmit}
+                                sx={{ mt: 10 }}
                             >
-                                Sign Up
-                            </Button>
-
+                                <Grid container  sx={
+                                    {
+                                        justifyContent: 'center'
+                                    }
+                                }>
+                                    <Grid container spacing={1} xs={6} md={3}>
+                                        <Grid item xs={12} sx={
+                                            {
+                                                justifyContent: 'center',
+                                                display: 'flex'
+                                            }}>
+                                            <OutlinedInput
+                                                sx={{color: 'white', border: '1px solid #fff'}}
+                                                autoComplete="email"
+                                                fullWidth
+                                                name="email"
+                                                id="email"
+                                                placeholder="Email">
+                                            </OutlinedInput>
+                                        </Grid>
+                                        <Grid item xs={12} sx={
+                                            {
+                                                justifyContent: 'center',
+                                                display: 'flex'
+                                            }}>
+                                            <OutlinedInput
+                                                sx={{color: 'white', border: '1px solid #fff'}}
+                                                autoComplete="password"
+                                                fullWidth
+                                                name="password"
+                                                id="password"
+                                                placeholder="Password">
+                                            </OutlinedInput>
+                                        </Grid>
+                                        <Grid item xs={12} sx={
+                                            {
+                                                justifyContent: 'center',
+                                                display: 'flex'
+                                            }}>
+                                            <OutlinedInput
+                                                sx={{color: 'white', border: '1px solid #fff'}}
+                                                autoComplete="password"
+                                                fullWidth
+                                                name="confirm-password"
+                                                id="confirm-password"
+                                                placeholder="Confirm Password">
+                                            </OutlinedInput>
+                                        </Grid>
+                                        <Grid item xs={12} sx={
+                                            {
+                                                justifyContent: 'center',
+                                                display: 'flex'
+                                            }}>
+                                            <Button  endIcon={<ShortcutIcon />}
+                                                     sx={{
+                                                         border: 'none',
+                                                         textTransform: 'none',
+                                                         justifyContent: 'flex-start',
+                                                         height: 55,
+                                                         color: 'white',
+                                                         background: 'linear-gradient(to right,#124944, #C4D9B9)'
+                                                     }}
+                                                     fullWidth
+                                                     size="large"
+                                                     type="submit"
+                                                     variant="outlined">Sign up your account</Button>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid container spacing={2} xs={10} md={1} >
+                                        <Grid item xs={12} sx={
+                                            {
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                display: 'flex',
+                                                color: 'white'
+                                            }}>
+                                            <Typography fontSize="20px">- or -</Typography>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid container spacing={1} xs={6} md={3} sx={
+                                        {
+                                            alignItems: 'center'
+                                        }}>
+                                        <Grid item xs={12} sx={
+                                            {
+                                                justifyContent: 'center',
+                                                display: 'flex'
+                                            }}>
+                                            <Button
+                                                     sx={{
+                                                         fontSize: 20,
+                                                         fontFamily: 'Baloo',
+                                                         textTransform: 'none',
+                                                         justifyContent: 'center',
+                                                         height: 55,
+                                                         color: 'white',
+                                                         border:'1px solid transparent',
+                                                         whiteSpace: "pre-line"
+                                                     }}
+                                                     fullWidth
+                                                     size="large"
+                                                     type="submit"
+                                                     variant="outlined">Use one of the following{"\n"} methods to Signup</Button>
+                                        </Grid>
+                                        <Grid item xs={12} sx={
+                                            {
+                                                justifyContent: 'center',
+                                                display: 'flex'
+                                            }}>
+                                            <Button  startIcon={<FacebookIcon />}
+                                                     sx={{
+                                                         textTransform: 'none',
+                                                         justifyContent: 'flex-start',
+                                                         height: 55,
+                                                         color: 'white',
+                                                         border:'1px solid transparent',
+                                                         borderRightColor: '#C4D9B9',
+                                                         borderLeftColor:'#124944',
+                                                         background:'linear-gradient(to left,#C4D9B9 10%,#C4D9B9 70%,#C4D9B9 85%, #124944 100%) ' +
+                                                             'top/100% 2px,linear-gradient(to left, #C4D9B9 0%, #124944 100%) bottom/100% 2px',
+                                                         backgroundRepeat:'no-repeat'
+                                                     }}
+                                                     fullWidth
+                                                     size="large"
+                                                     type="submit"
+                                                     variant="outlined">Sign Up with Facebook</Button>
+                                        </Grid>
+                                        <Grid item xs={12} sx={
+                                            {
+                                                justifyContent: 'center',
+                                                display: 'flex'
+                                            }}>
+                                            <Button  startIcon={<GoogleIcon />}
+                                                     sx={{
+                                                         textTransform: 'none',
+                                                         justifyContent: 'flex-start',
+                                                         height: 55,
+                                                         color: 'white',
+                                                         border:'1px solid transparent',
+                                                         borderLeftColor: '#C4D9B9',
+                                                         borderRightColor:'#124944',
+                                                         background:'linear-gradient(to right,#C4D9B9 10%,#C4D9B9 70%,#C4D9B9 85%, #124944 100%) ' +
+                                                             'top/100% 2px,linear-gradient(to right, #C4D9B9 0%, #124944 100%) bottom/100% 2px',
+                                                         backgroundRepeat:'no-repeat'
+                                                     }}
+                                                     fullWidth
+                                                     size="large"
+                                                     type="submit"
+                                                     variant="outlined">Sign Up with Google</Button>
+                                        </Grid>
+                                        <Grid item xs={12} sx={
+                                            {
+                                                justifyContent: 'center',
+                                                display: 'flex'
+                                            }}>
+                                            <Button  startIcon={<AppleIcon />}
+                                                     sx={{
+                                                         textTransform: 'none',
+                                                         justifyContent: 'flex-start',
+                                                         height: 55,
+                                                         color: 'white',
+                                                         border:'1px solid transparent',
+                                                         borderRightColor: '#C4D9B9',
+                                                         borderLeftColor:'#124944',
+                                                         background:'linear-gradient(to left,#C4D9B9 10%,#C4D9B9 70%,#C4D9B9 85%, #124944 100%) ' +
+                                                             'top/100% 2px,linear-gradient(to left, #C4D9B9 0%, #124944 100%) bottom/100% 2px',
+                                                         backgroundRepeat:'no-repeat'
+                                                     }}
+                                                     fullWidth
+                                                     size="large"
+                                                     type="submit"
+                                                     variant="outlined">Sign Up with Apple account</Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Box>
                         </Box>
-                    </Box>
-                   </Grid>
-                </Grid>
-                <div className="divider"></div>
-                <Grid
-                    item
-                    xs={false}
-                    sm={4}
-                    md={6}
-                    sx={{
-                        clipPath: 'polygon(0 0, 0 0, 10000px 20000px, 10000px -0)',
-                        backgroundImage: `url(${background})`,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundColor: (t) =>
-                            t.palette.mode === 'dark' ? t.palette.grey[50] : t.palette.grey[900],
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                />
+                    </CardContent>
+                    <Grid item sx={{mt: 20}}><FooterLogin /></Grid>
+                </Card>
             </Grid>
         </ThemeProvider>
     );

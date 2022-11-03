@@ -7,12 +7,11 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-// import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Outlet } from "react-router-dom";
+import Grid from "@mui/material/Grid";
 
 const pages = ['Home','Food', 'Treats', 'Services'];
 
@@ -23,13 +22,12 @@ function RAppBar() {
         setAnchorElNav(event.currentTarget);
     };
 
-
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
 
     return (
-        <div>
+        <Grid sx={{backgroundColor: '#FBF3EA'}}>
         <AppBar position="static" sx={{backgroundColor: '#FBF3EA'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
@@ -38,7 +36,7 @@ function RAppBar() {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="/"
+                        href="/login"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -55,12 +53,12 @@ function RAppBar() {
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
+                            sx={{color: 'black'}}
                             size="large"
                             aria-label="account of current user"
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
-                            color="inherit"
                         >
                             <MenuIcon />
                         </IconButton>
@@ -89,24 +87,24 @@ function RAppBar() {
                             ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         variant="h5"
                         noWrap
                         component="a"
-                        href=""
+                        href="/login"
                         sx={{
                             mr: 2,
+                            ml: 15,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
+                            color: 'black',
+                            textDecoration: 'none'
                         }}
                     >
-                        LOGO
+                        Wagg .
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
                         {pages.map((page) => (
@@ -121,14 +119,14 @@ function RAppBar() {
                     </Box>
 
                     <Box sx={{ flexGrow: 0, display: 'flex', flexDirection: 'row'}}>
-                       <Button sx={{color: 'black', fontFamily: 'Baloo'}} xs={12} sm={6} md={6}>Sign Up</Button>
-                        <Button sx={{color: 'black', fontFamily: 'Baloo'}} xs={12} sm={6} md={6}>Shop Now</Button>
+                       <Button  href="/signup"  sx={{color: 'black', fontFamily: 'Baloo'}} xs={12} sm={6} md={6}>Sign Up</Button>
+                        <Button href="/homepage"  sx={{color: 'black', fontFamily: 'Baloo'}} xs={12} sm={6} md={6}>Shop Now</Button>
                     </Box>
                 </Toolbar>
             </Container>
         </AppBar>
         <Outlet />
-        </div>
+        </Grid>
     );
 }
 export default RAppBar;
