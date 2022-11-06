@@ -1,21 +1,36 @@
-import { lazy } from 'react';
+import MyHomePage from '../pages/home/home.page'
+import MyLoginPage from '../pages/authentication/login.page'
+import MyRegisterPage from '../pages/authentication/register.page'
+import MyVerifyPage from '../pages/authentication/verify.page'
 
-const Login = lazy(() => import('../login2'));
-const Register = lazy(() => import('../RegisterPage2'));
-
-
-const LoginRoutes = {
+export const Routes = {
     path: '/',
     children: [
         {
-            path: '/login',
-            element: <Login />
+            path: '/home',
+            children: [
+                {
+                    path: '',
+                    element: <MyHomePage />
+                }
+            ]
         },
         {
-            path: '/register',
-            element: <Register />
+            path: '/authentication',
+            children: [
+                {
+                    path: '/login',
+                    element: <MyLoginPage />
+                },
+                {
+                    path: '/register',
+                    element: <MyRegisterPage />
+                },
+                {
+                    path: '/verify',
+                    element: <MyVerifyPage />
+                },
+            ]
         }
     ]
 };
-
-export default LoginRoutes;
