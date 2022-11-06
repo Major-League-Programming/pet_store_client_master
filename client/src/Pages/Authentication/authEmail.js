@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import {CardContent } from "@mui/material";
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {Card} from "reactstrap";
-import FooterLogin from "./FooterLogin";
+import FooterLogin from "./footerLogin";
 
 const theme = createTheme({
     overrides: {

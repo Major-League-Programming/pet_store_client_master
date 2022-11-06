@@ -12,7 +12,7 @@ import ShortcutIcon from '@mui/icons-material/Shortcut';
 import AppleIcon from '@mui/icons-material/Apple';
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import FooterLogin from "./FooterLogin";
+import FooterLogin from "./footerLogin";
 
 
 const theme = createTheme({
@@ -43,7 +43,7 @@ export default  function SignUpSide() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Grid container component="main" sx={{height: '100vh', backgroundColor:'#09040a',  display: "flex", justifyContent: "center", position: 'absolute'}} >
+            <Grid container component="main" sx={{height: '92.5vh', backgroundColor:'#09040a',  display: "flex", justifyContent: "center", position: 'absolute'}} >
                 <Card>
                     <CardContent>
                         <Box
