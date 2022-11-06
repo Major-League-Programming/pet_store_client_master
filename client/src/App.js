@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import MyHomeAppBarComponent from './components/appBar/home.appBar.component'
 import MyAuthenticationAppBarComponent from './components/appBar/authentication.appBar.component'
 //Pages
+//import MyLayoutPage from './pages/layout/layout.page.component'
 import MyHomePage from './pages/home/home.page'
 import MyLoginPage from './pages/authentication/login.page'
 import MyRegisterPage from './pages/authentication/register.page'

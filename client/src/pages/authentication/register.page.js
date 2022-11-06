@@ -2,7 +2,7 @@
 import {Card} from 'reactstrap'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import {Box, Button, CardContent, Grid, OutlinedInput, Typography} from '@mui/material'
-import {Apple as appleIcon, Facebook as facebookIcon, Google as googleIcon, Shortcut as shortcutIcon} from '@mui/icons-material'
+import {Apple as AppleIcon, Facebook as FacebookIcon, Google as GoogleIcon, Shortcut as ShortcutIcon} from '@mui/icons-material'
 //Components
 import MyFooterComponent from '../../components/footer/footer.component';
 
@@ -34,7 +34,7 @@ export default function MyRegisterPage() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Grid container component="main" sx={{height: '92.5vh', backgroundColor:'#09040a',  display: "flex", justifyContent: "center", position: 'absolute'}} >
+            <Grid container component="main" sx={{backgroundColor:'#09040a',  display: "flex", justifyContent: "center", position: 'absolute'}} >
                 <Card>
                     <CardContent>
                         <Box
@@ -113,7 +113,7 @@ export default function MyRegisterPage() {
                                                 justifyContent: 'center',
                                                 display: 'flex'
                                             }}>
-                                            <Button  endIcon={<shortcutIcon />}
+                                            <Button  endIcon={<ShortcutIcon />}
                                                      sx={{
                                                          border: 'none',
                                                          textTransform: 'none',
@@ -169,7 +169,7 @@ export default function MyRegisterPage() {
                                                 justifyContent: 'center',
                                                 display: 'flex'
                                             }}>
-                                            <Button  startIcon={<facebookIcon />}
+                                            <Button  startIcon={<FacebookIcon />}
                                                      sx={{
                                                          textTransform: 'none',
                                                          justifyContent: 'flex-start',
@@ -192,7 +192,7 @@ export default function MyRegisterPage() {
                                                 justifyContent: 'center',
                                                 display: 'flex'
                                             }}>
-                                            <Button  startIcon={<googleIcon />}
+                                            <Button  startIcon={<GoogleIcon />}
                                                      sx={{
                                                          textTransform: 'none',
                                                          justifyContent: 'flex-start',
@@ -215,7 +215,7 @@ export default function MyRegisterPage() {
                                                 justifyContent: 'center',
                                                 display: 'flex'
                                             }}>
-                                            <Button  startIcon={<appleIcon />}
+                                            <Button  startIcon={<AppleIcon />}
                                                      sx={{
                                                          textTransform: 'none',
                                                          justifyContent: 'flex-start',
