@@ -119,7 +119,7 @@ export default function MyHomeAppBarComponent() {
                         </Box>
                         <Stack  spacing={2} direction="row">
                             <Box sx={{ flexGrow: 0, display: 'flex', flexDirection: 'row'}}>
-                                <ColorButton   href="/signup"  sx={{color: 'black', fontFamily: 'Baloo'}} xs={12} sm={6} md={6} variant="contained">Contact Us</ColorButton >
+                                <ColorButton   href="/signup"  sx={{color: 'black', fontFamily: 'Baloo', borderRadius: 0}} xs={12} sm={6} md={6} variant="contained">Contact Us</ColorButton >
                             </Box>
                         </Stack>
                     </Toolbar>

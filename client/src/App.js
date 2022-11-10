@@ -16,17 +16,16 @@ import MyVerifyPage from './pages/authentication/verify.page'
 export default function App() {
     return (
         <Routes>
-            <Route path="/">
-                <Route index element={<p>Hi!</p>}/>
-                <Route path="home" element={<MyHomeAppBarComponent />}>
-                    <Route path="" element={<MyHomePage />} />
-                </Route>
+            <Route path="/" element={<MyHomeAppBarComponent />}>
+                <Route index element={<MyHomePage />}/>
+                <Route path="home" element={<MyHomePage />} />
+            </Route>
                 <Route path="authentication/" element={<MyAuthenticationAppBarComponent />}>
                     <Route path="login" element={<MyLoginPage />} />
                     <Route path="register" element={<MyRegisterPage />} />
                     <Route path="verify" element={<MyVerifyPage />} />
                 </Route>
-            </Route>
+            {/*</Route>*/}
         </Routes>
     );
 }

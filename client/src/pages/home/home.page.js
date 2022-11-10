@@ -7,6 +7,8 @@ import dogHouse from '../../assets/images/home/dogHouse.png'
 import dogFood from '../../assets/images/home/dogFood.png'
 import catFood from '../../assets/images/home/catFood.png'
 import vetShop from '../../assets/images/home/vetShop.png'
+import PricingCard from "../../components/services.packages.component";
+import FooterHome from "../../components/footer/footerHome.component";
 
 //Theme
 const theme = createTheme({
@@ -37,11 +39,11 @@ export default function MyHomePage() {
                                 {/*    display: 'flex',*/}
                                 {/*    ml: '850px',*/}
                                 {/*    width: '500px',*/}
-                                {/*    mt: '-160px'*/}
+                                {/*    mt: '-160px',*/}
                                 {/*}}>*/}
                                 {/*    <Container sx={{backgroundColor: '#99CCCB', width: 300, height: 500 }} xs={12} sm={6} md={6}></Container >*/}
                                 {/*</Box>*/}
-                                <Typography component="h1" variant="h3">
+                                <Typography component="h1" fontSize='80px'>
                                     Real Pet food fresh from the fridge.
                                 </Typography>
                                 <Stack direction="row" spacing={2} sx={{ mt: 4 }}>
@@ -58,18 +60,19 @@ export default function MyHomePage() {
                                     <Grid item>
                                         <img width="150px" height="175px" src={dogHome} alt="dog food" />
                                     </Grid>
-                                    <Grid item sx={{width:'100%'}}>
-                                        <Card>
+                                    <Grid item sx={{width:'100%', mt: 6}}>
+                                        <Card sx={{borderRadius: 0, width: 800}}>
                                             <CardContent>
                                                 <Grid container spacing={3}
                                                       sx={{
                                                           "& .MuiGrid-item:last-child > .MuiBox-root": {
                                                               border: "none",
                                                           },
+                                                          justifyContent: 'center'
                                                       }}>
                                                     <Grid item>
                                                         <Box >
-                                                            <Typography fontFamily="Righteous" gutterBottom color="text.secondary" variant="h4" sx={{display: 'flex', justifyContent: 'center'}}> 200 + </Typography>
+                                                            <Typography fontFamily="Righteous" gutterBottom color="text.secondary" variant="h4" sx={{display: 'flex', justifyContent: 'center'}}> 200k+ </Typography>
                                                             <Typography fontFamily="Righteous" variant="h5" sx={{display: 'flex', justifyContent: 'center'}}> Nutritional Complete </Typography>
                                                         </Box>
                                                     </Grid>
@@ -89,11 +92,13 @@ export default function MyHomePage() {
                                             </CardContent>
                                         </Card>
                                     </Grid>
+                                    <Grid item sx={{width: 40, height: 126.5, backgroundColor: '#FEB988', ml: -1.1, mt: 6}}>
+                                    </Grid>
                                 </Grid>
                             </Grid>
-                            <Container maxWidth="lg" sx={{ py: 10 }}>
+                            <Container maxWidth="lg" sx={{ py: 10, mt: 18 }}>
                                 <Box sx={{ textAlign: "center", mb: 10 }}>
-                                    <Typography variant="h4">Real Pet food fresh from the fridge.</Typography>
+                                    <Typography fontSize='100px'>Real Pet food fresh from the fridge.</Typography>
                                 </Box>
                                 <Grid container spacing={0} sx={{ justifyContent: 'center' }}>
                                     <Grid item xs={12} md={3}>
@@ -190,8 +195,17 @@ export default function MyHomePage() {
                                     </Grid>
                                 </Grid>
                             </Container>
+                            <Container maxWidth="lg" sx={{ py: 10, mt: 18 }}>
+                                <Box sx={{ textAlign: "center", mb: 10 }}>
+                                    <Typography fontSize='100px'>Offers</Typography>
+                                </Box>
+                                <Grid container spacing={0} sx={{ justifyContent: 'center' }}>
+                                    < PricingCard/>
+                                </Grid>
+                            </Container>
                         </Grid>
                     </Container>
+                    <FooterHome/>
                 </Box>
             </Grid>
         </ThemeProvider>
