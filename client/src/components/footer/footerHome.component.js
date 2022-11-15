@@ -1,4 +1,3 @@
-
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
@@ -7,7 +6,15 @@ import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import {CardContent, ListItem, ListItemButton, ListItemIcon, ListItemText, OutlinedInput} from "@mui/material";
+import {
+    CardContent,
+    FilledInput,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    OutlinedInput
+} from "@mui/material";
 import {Button, List} from "reactstrap";
 import myPhoneIcon from '../../assets/images/footer/phone.png'
 import myEmailIcon from '../../assets/images/footer/email.png'
@@ -18,9 +25,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import {purple} from "@mui/material/colors";
 import { styled } from '@mui/material/styles';
 import Card from "@mui/material/Card";
+import FooterImage from '../../assets/images/footer/f3.png'
 
 const categoriesProducts = [
     { header: "Our Products", links: ["Dog Food", "Cat Food", "Treats", "Accessories", "Hygiene"] }
@@ -38,35 +45,52 @@ const categoriesNews = [
 const links = [ "Privacy", "Services", "Terms & Conditions"];
 
 const MyCustomButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.getContrastText(purple[500]),
-    backgroundColor: '#234844',
+    backgroundColor: '#E77A1D',
     border: 0,
     borderRadius: 2,
-    height: 40,
-    width: 50
-
+    height: 60,
+    width: 150,
+    fontFamily:'Righteous'
 }));
 
 export default function FooterHome() {
     return (
         <Box component="footer">
             <Container maxWidth="lg">
-                <Box component="section">
-                    <Container maxWidth="lg" sx={{ py: 10 }}>
+                <Box component="section"
+                     sx={{
+                         position: "relative",
+                         bgcolor: "#234844"
+                }}>
+                    <img
+                        src={FooterImage}
+                        alt=""
+                        style={{
+                            position: "absolute",
+                            height: "540px",
+                            bottom: '-0.1px'
+                        }}
+                    />
+                    <Container maxWidth="lg">
+                        <Grid container justifyContent="flex-end" spacing={2}>
                         <Card
-                            sx={{ bgcolor: "#234844", color: "background.default", py: 6 }}
+                            sx={{ bgcolor: 'transparent', color: "background.default", py: 6, boxShadow: 'none', textAlign: "flex-end" }}
                         >
                             <CardContent sx={{ textAlign: "flex-end" }}>
-                                <Typography component="div" sx={{ mb: 2 }} variant="h4">
-                                    Find Everything Your Pet Needs
+                                <Typography fontFamily="Righteous" component="div" sx={{ mb: 2, mr: 5,  whiteSpace: "pre-line" }} variant="h2">
+                                    {
+                                        `Find Everything Your
+                                         Pet Needs`}
                                 </Typography>
-                                <MyCustomButton fullWidth sx={{ mt: 4, backgroundColor: '#124944', textTransform: 'none' }} variant="contained">
-                                    Book Now
+                                <MyCustomButton fullWidth sx={{ mt: 4, textTransform: 'none' }} variant="contained">
+                                    Shop Now
                                 </MyCustomButton>
                             </CardContent>
                         </Card>
+                        </Grid>
                     </Container>
                 </Box>
+
                 <Grid container spacing={3} sx={{ py: 5 }}>
                     <Grid item xs={12} md={4}>
                         <Typography fontFamily="Satisfy" fontSize={30} color="text.primary" sx={{ mt: '-5px' }}>
@@ -186,11 +210,12 @@ export default function FooterHome() {
                                     </Link>
                                 ))}
                                 <Box sx={{ mt: { xs: 2, md: 0 } }}>
-                                    <OutlinedInput
-                                        id="mail"
+                                    <FilledInput
+                                        disableUnderline
+                                        id="email"
                                         endAdornment={<CircleNotificationsOutlinedIcon/>}
                                         placeholder="Email"
-                                        sx={{ pr: 0.5 }}
+                                        sx={{ pr: 0.5, backgroundColor: '#fff' }}
                                     />
                                 </Box>
                                 <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
