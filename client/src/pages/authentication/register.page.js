@@ -39,7 +39,7 @@ export default function MyRegisterPage() {
                     <CardContent>
                         <Box
                             sx={{
-                                mt: 25,
+                                mt: 5,
                                 display: "flex",
                                 flexDirection: "column",
                                 alignItems: "center",

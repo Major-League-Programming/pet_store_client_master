@@ -11,6 +11,7 @@ import catFood from '../../assets/images/home/catFood.png'
 import vetShop from '../../assets/images/home/vetShop.png'
 import PricingCard from "../../components/services.packages.component";
 import FooterHome from "../../components/footer/footerHome.component";
+import ProductGrid from '../../components/products/products.components';
 
 //Theme
 const theme = createTheme({
@@ -202,7 +203,7 @@ export default function MyHomePage() {
                                     <Typography fontSize='100px'>Offers</Typography>
                                 </Box>
                                 <Grid container spacing={0} sx={{ justifyContent: 'center' }}>
-                                    < PricingCard/>
+                                    < ProductGrid/>
                                 </Grid>
                             </Container>
                             <Container maxWidth='lg' sx={{ py: 10, mt: 18, ml: 2 }}>

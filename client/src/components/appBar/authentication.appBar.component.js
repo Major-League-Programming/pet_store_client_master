@@ -28,7 +28,7 @@ export default function MyAuthenticationAppBarComponent() {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="/login"
+                        href="/authentication/login"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -83,7 +83,7 @@ export default function MyAuthenticationAppBarComponent() {
                         variant="h5"
                         noWrap
                         component="a"
-                        href="/login"
+                        href="/authentication/login"
                         sx={{
                             mr: 2,
                             ml: 15,

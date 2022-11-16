@@ -36,7 +36,7 @@ export default function MyHomeAppBarComponent() {
                             variant="h6"
                             noWrap
                             component="a"
-                            href="/login"
+                            href="/authentication/login"
                             sx={{
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
@@ -91,7 +91,7 @@ export default function MyHomeAppBarComponent() {
                             variant="h5"
                             noWrap
                             component="a"
-                            href="/login"
+                            href="/authentication/login"
                             sx={{
                                 mr: 2,
                                 ml: 15,
@@ -119,7 +119,7 @@ export default function MyHomeAppBarComponent() {
                         </Box>
                         <Stack  spacing={2} direction="row">
                             <Box sx={{ flexGrow: 0, display: 'flex', flexDirection: 'row'}}>
-                                <ColorButton   href="/signup"  sx={{color: 'black', fontFamily: 'Baloo', borderRadius: 0}} xs={12} sm={6} md={6} variant="contained">Contact Us</ColorButton >
+                                <ColorButton   href="/authentication/signup"  sx={{color: 'black', fontFamily: 'Baloo', borderRadius: 0}} xs={12} sm={6} md={6} variant="contained">Contact Us</ColorButton >
                             </Box>
                         </Stack>
                     </Toolbar>
