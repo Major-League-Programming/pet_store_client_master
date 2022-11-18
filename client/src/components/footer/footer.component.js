@@ -4,7 +4,7 @@ import {Box, Container, Link, Stack, Typography} from '@mui/material'
 export default function MyFooterComponent({links}) {
     return (
         <Box component="footer">
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
                 <Box
                     sx={{
                         display: "flex",

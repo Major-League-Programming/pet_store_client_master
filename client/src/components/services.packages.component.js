@@ -43,7 +43,15 @@ export default function PricingCard() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
+            <Box sx={{ textAlign: "center", mb: 10 }}>
+          <Typography variant="h4" sx={{ mb: 2 }}>
+            Pricing
+          </Typography>
+          <Typography color="text.secondary" component="div">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit
+          </Typography>
+        </Box>
                 <Grid container>
                     {pricingsFriendly.map((pricingF) => (
                         <Grid key={pricingF.title} item xs={12} md={4}>

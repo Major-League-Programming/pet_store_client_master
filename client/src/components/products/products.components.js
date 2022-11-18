@@ -41,8 +41,23 @@ const cart = [
   ];
 export default function ProductGrid() {
   return (
-    <Box component="section">
-      <Container maxWidth="lg">
+    <Box component="section" sx={{ width: '100%', mr: 0 }}>
+    <Container maxWidth="xl" sx={{ py: 10, justifyContent: 'center', mr: 0,  pr: '0 !important' }}>
+      <Box
+          sx={{
+            textAlign: "center",
+            maxWidth: 480,
+            mx: "auto",
+            mb: 8,
+          }}
+        >
+          <Typography component="h2" sx={{ mb: 2 }} variant="h3">
+            Offers
+          </Typography>
+          <Typography component="div" variant="subtitle1">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit
+          </Typography>
+        </Box>
         <Grid container spacing={5}>
           {members.map((member, index) => (
             <Grid item key={index} xs={12} sm={6} md={4} sx={{backgroundColor: '#fff' }}>

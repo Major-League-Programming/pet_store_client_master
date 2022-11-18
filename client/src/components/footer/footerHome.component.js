@@ -13,7 +13,6 @@ import {
     ListItemButton,
     ListItemIcon,
     ListItemText,
-    OutlinedInput
 } from "@mui/material";
 import {Button, List} from "reactstrap";
 import myPhoneIcon from '../../assets/images/footer/phone.png'
@@ -56,7 +55,7 @@ const MyCustomButton = styled(Button)(({ theme }) => ({
 export default function FooterHome() {
     return (
         <Box component="footer">
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
                 <Box component="section"
                      sx={{
                          position: "relative",
@@ -71,7 +70,7 @@ export default function FooterHome() {
                             bottom: '-0.1px'
                         }}
                     />
-                    <Container maxWidth="lg">
+                    <Container maxWidth="xl">
                         <Grid container justifyContent="flex-end" spacing={2}>
                         <Card
                             sx={{ bgcolor: 'transparent', color: "background.default", py: 6, boxShadow: 'none', textAlign: "flex-end" }}
@@ -215,7 +214,7 @@ export default function FooterHome() {
                                         id="email"
                                         endAdornment={<CircleNotificationsOutlinedIcon/>}
                                         placeholder="Email"
-                                        sx={{ pr: 0.5, backgroundColor: '#fff' }}
+                                        sx={{  pr: 0.5, backgroundColor: '#fff' }}
                                     />
                                 </Box>
                                 <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
@@ -238,7 +237,7 @@ export default function FooterHome() {
                 </Grid>
                 <Divider />
                 <Box component="footer">
-                    <Container maxWidth="lg">
+                    <Container maxWidth="xl">
                         <Box
                             sx={{
                                 display: "flex",
